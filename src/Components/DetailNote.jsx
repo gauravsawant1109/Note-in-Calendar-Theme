@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import useCustomHook from "./useCustomHook";
 import NewNote from "./NewNote";
+import { IoWarning } from "react-icons/io5";
 // import NewNote from "./NewNote";
 const DetailNote = () => {
   const { result, selectedDate, filteredData } = useCustomHook();
@@ -25,18 +26,34 @@ const DetailNote = () => {
         
         <div className="text-center ">
           {note.length > 0 ? (
-            note.map((n, i) => (
+            <>
+            {note.map((n, i) => (
               <div className="m-5  rounded "  key={i}>
                 <h3 className=" ">{i+1}) {n.Title} </h3>
                 <p>{n.note}</p>
                 <h6 className="text-end">On : {n.EnteredDate}</h6>
               </div>
-            ))
+            ))}
+             <div>
+             <Link to={`/Calendar/NewNote/${NOTE}`} 
+                RenderDate={NOTE}
+                className="btn btn-primary mb-2"
+                style={{ textDecoration: "none" }}
+              >
+                <span className="text-white">New Note</span>
+              </Link>
+            </div>
+            </>
           ) : (
             <div>
               
-          <NewNote caption={caption} RenderDate={NOTE}/>
+          {/* <NewNote caption={caption} RenderDate={NOTE}/> */}
+         <div className="d-flex flex-column justify-content-center" style={{height:"100vh"}}>
+         <h1 className="m-5"> <span className="text-warning "><IoWarning/></span> {caption}</h1>
+          <Link to={`/Calendar/NewNote/${NOTE}`} caption={caption} RenderDate={NOTE}><button className="btn btn-primary">Add New Note</button></Link>
 
+
+         </div>
             </div>
           )}
         </div>

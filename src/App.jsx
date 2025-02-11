@@ -20,8 +20,9 @@ function App() {
           <Route path="/Calendar/DetailNoteDate/:NOTE" element={<DetailNote/>}/>
         
           <Route path="/Calendar/DetailNoteTitle/:NOTE" element={<DetailNoteTitle/>}/>
-
           <Route path="/Calendar/NewNote" element={<NewNote/>}/>
+
+          <Route path="/Calendar/NewNote/:NOTE" element={<NewNote/>}/>
           <Route path="/Calendar/IndividualNote/:INDNOTE" element={<IndividualNote/>}/>
 
 

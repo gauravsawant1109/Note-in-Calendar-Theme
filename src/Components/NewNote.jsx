@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useCustomHook from "./useCustomHook";
 import { ToastContainer, toast } from 'react-toastify';
 import { IoMdArrowRoundBack } from "react-icons/io";
@@ -8,11 +8,14 @@ const NewNote = ({caption,RenderDate}) => {
   const { EnteredDate, setEnteredDate, setNote, note, AddedNote, initial,Title,setTitle } =
     useCustomHook();
 console.log("RenderDate",RenderDate);
+ const { NOTE } = useParams();
+  // const note = NOTE ? JSON.parse(decodeURIComponent(NOTE)) : null;
+ 
 useEffect(()=>{
- if(RenderDate){
-  setEnteredDate(RenderDate)
+ if(NOTE){
+  setEnteredDate(NOTE)
  }
-},[RenderDate,setEnteredDate])
+},[NOTE,setEnteredDate])
 
   return (
       
