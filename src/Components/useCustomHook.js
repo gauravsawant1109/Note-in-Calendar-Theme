@@ -88,6 +88,9 @@ const useCustomHook = () => {
     // }
   }
 
+  function Edit(){
+   
+  }
    const [currentMonth, setCurrentMonth] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState(new Date());
     
@@ -101,7 +104,7 @@ const useCustomHook = () => {
       setSelectedDate(cloneDay)
     }
     const [renderNote,setrenderNote] = useState()
-  return {searchTitle,setSearchTitle,clickToSelect,renderNote,setrenderNote,nextMonth,prevMonth,selectedDate, setSelectedDate,currentMonth, setCurrentMonth, result, EnteredDate, RemoveNote, filteredData, setEnteredDate, setNote, note, AddedNote, initial, setInitial, Title, setTitle, searchNote, searchDate, setSearchDate }
+  return {Edit,searchTitle,setSearchTitle,clickToSelect,renderNote,setrenderNote,nextMonth,prevMonth,selectedDate, setSelectedDate,currentMonth, setCurrentMonth, result, EnteredDate, RemoveNote, filteredData,setFilteredData, setEnteredDate, setNote, note, AddedNote, initial, setInitial, Title, setTitle, searchNote, searchDate, setSearchDate }
 }
 
 export default useCustomHook;

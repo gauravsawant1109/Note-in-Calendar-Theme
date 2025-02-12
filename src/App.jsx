@@ -9,6 +9,7 @@ import DetailNote from "./Components/DetailNote";
 import NewNote from "./Components/NewNote";
 import IndividualNote from "./Components/IndividualNote";
 import DetailNoteTitle from "./Components/DetailNoteTitle";
+import EditNote from "./Components/EditNote";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<Navigate to="/Calendar"/>}/>
           <Route path="/Calendar" element={<Calendar/>}/>
           <Route path="/Calendar/DetailNoteDate/:NOTE" element={<DetailNote/>}/>
-        
+          <Route path="/Calendar/EditNote/:NoteForEdit" element={<EditNote/>}/>
           <Route path="/Calendar/DetailNoteTitle/:NOTE" element={<DetailNoteTitle/>}/>
           <Route path="/Calendar/NewNote" element={<NewNote/>}/>
 
